@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Maanyam Dhroov</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:white;
+overflow-x:hidden;
+color:#222;
+}
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+z-index:-2;
+}
+
+.shape{
+position:fixed;
+width:120px;
+height:120px;
+background:linear-gradient(45deg,#6dd5fa,#4da3ff);
+opacity:0.15;
+border-radius:30%;
+animation:float 10s infinite ease-in-out;
+}
+
+.shape:nth-child(1){top:10%;left:5%;}
+.shape:nth-child(2){top:60%;left:80%;}
+.shape:nth-child(3){top:40%;left:40%;}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-40px)}
+100%{transform:translateY(0)}
+}
+
+header{
+text-align:center;
+padding:60px;
+}
+
+.profile{
+width:180px;
+height:180px;
+border-radius:50%;
+background:linear-gradient(135deg,#6dd5fa,#2980b9);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:60px;
+color:white;
+margin:auto;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.typing{
+font-size:42px;
+font-weight:bold;
+margin-top:20px;
+}
+
+.section{
+max-width:900px;
+margin:auto;
+padding:80px 20px;
+text-align:center;
+}
+
+h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+p{
+font-size:18px;
+line-height:1.6;
+}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+background:#4da3ff;
+color:white;
+margin:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.stats{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.stat{
+background:#f4f4f4;
+padding:30px;
+border-radius:15px;
+width:160px;
+transition:0.3s;
+}
+
+.stat:hover{
+transform:translateY(-10px);
+}
+
+.skill{
+margin:20px 0;
+text-align:left;
+}
+
+.bar{
+background:#eee;
+height:14px;
+border-radius:20px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+background:#4da3ff;
+width:0;
+transition:2s;
+}
+
+.medals{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.medal{
+background:#fafafa;
+padding:25px;
+border-radius:20px;
+transition:0.4s;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.medal:hover{
+transform:scale(1.07);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.counters{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+}
+
+.counter{
+font-size:40px;
+font-weight:bold;
+color:#4da3ff;
+}
+
+.card{
+width:260px;
+height:340px;
+margin:auto;
+perspective:1000px;
+}
+
+.inner{
+width:100%;
+height:100%;
+position:relative;
+transition:1s;
+transform-style:preserve-3d;
+}
+
+.card:hover .inner{
+transform:rotateY(180deg);
+}
+
+.front,.back{
+position:absolute;
+width:100%;
+height:100%;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:20px;
+backface-visibility:hidden;
+}
+
+.back{
+background:#4da3ff;
+color:white;
+transform:rotateY(180deg);
+}
+
+.glow{
+position:fixed;
+width:20px;
+height:20px;
+background:rgba(0,150,255,0.5);
+border-radius:50%;
+pointer-events:none;
+box-shadow:0 0 20px rgba(0,150,255,0.7);
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+
+<div class="glow" id="glow"></div>
+
+<header>
+
+<div class="profile">M</div>
+
+<div class="typing" id="typing"></div>
+
+<p>
+Welcome to the personal world of <b>Maanyam Dhroov</b> —
+a student driven by curiosity, creativity, and a love for learning.
+</p>
+
+<button>Explore</button>
+<button>Achievements</button>
+
+</header>
+
+<section class="section">
+
+<h2>Who I Am</h2>
+
+<p>
+I enjoy discovering new ideas, solving challenging problems,
+and pushing myself to improve every day.
+Curiosity is what drives my learning journey.
+</p>
+
+<p>
+For me, learning is not just about grades —
+it is about building knowledge, creativity,
+discipline, and character.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Personality Stats</h2>
+
+<div class="stats">
+
+<div class="stat">Curiosity<br><b>98%</b></div>
+<div class="stat">Creativity<br><b>95%</b></div>
+<div class="stat">Focus<br><b>97%</b></div>
+<div class="stat">Leadership<br><b>92%</b></div>
+<div class="stat">Problem Solving<br><b>99%</b></div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Skills</h2>
+
+<div class="skill">Mathematics
+<div class="bar"><div class="fill" style="width:95%"></div></div>
+</div>
+
+<div class="skill">Science
+<div class="bar"><div class="fill" style="width:96%"></div></div>
+</div>
+
+<div class="skill">Technology (AI/IT/IoT)
+<div class="bar"><div class="fill" style="width:93%"></div></div>
+</div>
+
+<div class="skill">Creativity
+<div class="bar"><div class="fill" style="width:94%"></div></div>
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>AI Personality Radar</h2>
+
+<canvas id="radar"></canvas>
+
+</section>
+
+<section class="section">
+
+<h2>3D Profile Card</h2>
+
+<div class="card">
+
+<div class="inner">
+
+<div class="front">
+<h3>Maanyam Dhroov</h3>
+<p>Explorer of knowledge</p>
+</div>
+
+<div class="back">
+<p>
+A student passionate about learning,
+innovation, and exploring the future
+through knowledge and creativity.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Achievements</h2>
+
+<div class="counters">
+
+<div>
+<div class="counter" data-target="7">0</div>
+Gold Medals
+</div>
+
+<div>
+<div class="counter" data-target="5">0</div>
+Subjects Full Marks
+</div>
+
+<div>
+<div class="counter" data-target="1">0</div>
+IIT Program
+</div>
+
+</div>
+
+<div class="medals">
+
+<div class="medal">🥇 IEO Gold Medalist (3 Times)</div>
+<div class="medal">🥇 NSO Gold Medalist</div>
+<div class="medal">🥇 IGKO Gold Medalist</div>
+<div class="medal">🥇 Cyber Olympiad Gold</div>
+<div class="medal">🥇 ISSO Gold Medalist</div>
+<div class="medal">🥇 IMO Gold Medalist</div>
+<div class="medal">🎓 Eureka Junior – IIT Bombay</div>
+
+</div>
+
+</section>
+
+<script>
+
+let text="Maanyam Dhroov";
+let i=0;
+
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,100);
+}
+}
+
+typing();
+
+new Chart(document.getElementById("radar"),{
+type:"radar",
+data:{
+labels:["Creativity","Curiosity","Leadership","Knowledge","Focus"],
+datasets:[{data:[95,98,92,96,97]}]
+},
+options:{scales:{r:{beginAtZero:true,max:100}}}
+});
+
+document.addEventListener("mousemove",e=>{
+let g=document.getElementById("glow");
+g.style.left=e.clientX+"px";
+g.style.top=e.clientY+"px";
+});
+
+const counters=document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+const update=()=>{
+const target=+counter.getAttribute("data-target");
+const c=+counter.innerText;
+const inc=target/100;
+
+if(c<target){
+counter.innerText=Math.ceil(c+inc);
+setTimeout(update,30);
+}
+else{
+counter.innerText=target;
+}
+}
+update();
+});
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*3,
+dx:Math.random()*0.5,
+dy:Math.random()*0.5
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="#4da3ff";
+ctx.fill();
+
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x>canvas.width)p.x=0;
+if(p.y>canvas.height)p.y=0;
+
+});
+
+requestAnimationFrame(animate);
+}
+
+animate();
+
+</script>
+
+</body>
+</html>
