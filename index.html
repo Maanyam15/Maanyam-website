@@ -5,59 +5,185 @@
 <title>Maanyam's Website</title>
 
 <style>
+
 body{
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#6a11cb,#2575fc);
-    color:white;
-    text-align:center;
-    padding:50px;
+margin:0;
+font-family:Arial, sans-serif;
+color:white;
+background: linear-gradient(135deg,#6a11cb,#2575fc);
+text-align:center;
 }
 
-h1{
-    font-size:60px;
+/* HERO SECTION */
+
+.hero{
+padding:120px 20px;
 }
 
-p{
-    font-size:22px;
+.hero h1{
+font-size:60px;
 }
 
-.card{
-    background:rgba(255,255,255,0.15);
-    padding:30px;
-    border-radius:20px;
-    display:inline-block;
-    margin-top:40px;
-    backdrop-filter: blur(10px);
+.hero p{
+font-size:22px;
 }
 
 button{
-    padding:12px 25px;
-    font-size:18px;
-    border:none;
-    border-radius:10px;
-    background:white;
-    color:#2575fc;
-    cursor:pointer;
+padding:14px 30px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:white;
+color:#2575fc;
+cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-    transform:scale(1.05);
+transform:scale(1.1);
 }
+
+/* SECTION STYLES */
+
+.section{
+padding:80px 20px;
+}
+
+.card{
+background:rgba(255,255,255,0.15);
+padding:30px;
+border-radius:20px;
+margin:20px auto;
+width:70%;
+backdrop-filter:blur(10px);
+}
+
+/* SKILLS */
+
+.skills{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.skill{
+background:white;
+color:#333;
+padding:20px;
+border-radius:15px;
+width:150px;
+font-weight:bold;
+}
+
+/* MEDALS */
+
+.medals{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.medal{
+font-size:50px;
+transition:0.3s;
+}
+
+.medal:hover{
+transform:scale(1.3);
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+font-size:18px;
+}
+
 </style>
+
 </head>
 
 <body>
 
+<!-- HERO -->
+
+<div class="hero">
 <h1>Welcome to Maanyam's Website 🚀</h1>
 
-<div class="card">
-<p>This is my first website hosted online!</p>
-<p>Built with HTML and published using GitHub Pages.</p>
+<p>This is my personal website on the internet!</p>
 
 <button onclick="alert('Thanks for visiting my website!')">
 Click Me
 </button>
 </div>
+
+<!-- ABOUT -->
+
+<div class="section">
+
+<h2>About Me</h2>
+
+<div class="card">
+
+<p>
+Hello! My name is Maanyam.  
+This is my first website hosted online.  
+I built this using HTML and published it using GitHub Pages.
+</p>
+
+<p>
+I enjoy technology, creativity, and building things on the internet.
+</p>
+
+</div>
+
+</div>
+
+<!-- SKILLS -->
+
+<div class="section">
+
+<h2>Things I Like</h2>
+
+<div class="skills">
+
+<div class="skill">💻 Coding</div>
+<div class="skill">🚀 Technology</div>
+<div class="skill">🎮 Games</div>
+<div class="skill">🌎 Websites</div>
+
+</div>
+
+</div>
+
+<!-- MEDAL SHOWCASE -->
+
+<div class="section">
+
+<h2>Medal Showcase 🏆</h2>
+
+<div class="medals">
+
+<div class="medal">🥇</div>
+<div class="medal">🥈</div>
+<div class="medal">🥉</div>
+<div class="medal">🏅</div>
+
+</div>
+
+<p>More achievements coming soon!</p>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>Made by Maanyam | Hosted with GitHub Pages 🌐</p>
+
+</footer>
 
 </body>
 </html>
